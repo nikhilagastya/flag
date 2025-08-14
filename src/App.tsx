@@ -24,11 +24,6 @@ function App() {
         setIsUnfurling(true);
       }, 3000);
 
-      // Show flowers after unfurling starts (4 seconds total)
-      flowerTimeoutRef.current = setTimeout(() => {
-        setShowFlowers(true);
-      }, 4000);
-
       // Show anthem notice after flowers start (5 seconds)
       timeoutRef.current = setTimeout(() => {
         setShowAnthemNotice(true);
@@ -38,6 +33,7 @@ function App() {
       anthemTimeoutRef.current = setTimeout(() => {
         setShowAnthemNotice(false);
         setIsAnthemPlaying(true);
+        setShowFlowers(true);
         if (audioRef.current) {
           audioRef.current.play().catch(console.error);
         }
@@ -167,9 +163,8 @@ function App() {
         {/* Patriotic Quote */}
         <div className="mt-8 p-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-lg max-w-2xl">
           <p className="text-lg italic text-gray-700">
-            "Freedom is not given, it is taken"
+            "Celebrate freedom with kindness and courage."
           </p>
-          <p className="text-sm text-gray-600 mt-2">- Netaji Subhas Chandra Bose</p>
         </div>
       </div>
     </div>
